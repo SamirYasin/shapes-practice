@@ -9,7 +9,9 @@ import java.util.ArrayList;
 
 public class TestShapes {
     public static void main(String[] args) {
-
+        Rectangle rectangle = new Rectangle(5.5 ,6);
+        Square square = new Square(2.5);
+        Circle circle = new Circle(4);
         /*
         This will be our actual program that we request some information from user to create 3 objects
         We will create 1 Rectangle, 1 Square and 1 Circle object
@@ -41,6 +43,28 @@ public class TestShapes {
          Circle has the largest area as 50.24
          */
 
+        System.out.println(rectangle);
+        System.out.println(square);
+        System.out.println(circle);
 
+        System.out.println("Area of the circle is " + circle.area());
+        System.out.println("Perimeter of the circle is " + circle.perimeter());
+        System.out.println("Area of the square is " + circle.area());
+        System.out.println("Perimeter of the square is " + circle.perimeter());
+        System.out.println("Area of the rectangle is " + rectangle.area());
+        System.out.println("Perimeter of the rectangle is " + rectangle.perimeter());
+
+      Object[] o = {circle,rectangle,square};
+      double[] shapesArea = {circle.area(), rectangle.area(), square.area()};
+      Object obj = o[0];
+      double largestArea = shapesArea[0];
+
+        for (int i = 0; i < o.length; i++) {
+            if(shapesArea[i] > largestArea){
+                largestArea = shapesArea[i];
+                obj = o[i];
+            }
+        }
+        System.out.println(obj + " has the largest area with " + largestArea);
     }
 }
